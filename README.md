@@ -146,7 +146,7 @@ The analysis uses a **star schema** data model optimized for analytical queries:
 | Peak Occupancy (London) | 98.4% | 95% max | Emergency |
 | Google Trends Lead Time | 7 days | — | Predictive Signal |
 
-https://github.com/ozzy2438/Hospital-Pressure-Analyse/blob/478b735af7f49c040dd9eb6ff3624c7db2b80b4b/.ipynb_checkpoints/nhs_expert_dashboard-checkpoint.png
+![NHS Pressure Dashboard](https://github.com/ozzy2438/Hospital-Pressure-Analyse/blob/main/.ipynb_checkpoints/nhs_expert_dashboard-checkpoint.png?raw=true)
 
 **The analysis identifies Google Trends search volume for "cold and flu" as a reliable 7-day leading indicator of hospital admissions**, enabling proactive staffing and discharge planning.
 
