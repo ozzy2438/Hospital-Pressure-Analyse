@@ -1,0 +1,73 @@
+2025-11-21 18:45:14,599 - winter_pressures - INFO - 🚀 WINTER PRESSURES DATA EXTRACTION - PHASE 1
+2025-11-21 18:45:14,599 - winter_pressures - INFO - ======================================================================
+2025-11-21 18:45:14,599 - winter_pressures - INFO - ✓ Created directory: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/raw/nhs/2025-11-21
+2025-11-21 18:45:14,599 - winter_pressures - INFO - ✓ Created directory: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/raw/weather/2025-11-21
+2025-11-21 18:45:14,599 - winter_pressures - INFO - ✓ Created directory: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/raw/trends/2025-11-21
+2025-11-21 18:45:14,599 - winter_pressures - INFO - ✓ Created directory: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/processed
+2025-11-21 18:45:14,599 - winter_pressures - INFO - ✓ Created directory: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/models
+2025-11-21 18:45:14,599 - winter_pressures - INFO - ✓ Created directory: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/outputs
+2025-11-21 18:45:14,599 - winter_pressures - INFO - ======================================================================
+2025-11-21 18:45:14,599 - winter_pressures - INFO - DOWNLOADING NHS ENGLAND UEC SITREP DATA
+2025-11-21 18:45:14,599 - winter_pressures - INFO - ======================================================================
+2025-11-21 18:45:14,600 - winter_pressures - WARNING - ⚠️  NHS England does not provide a direct API for UEC SitRep data
+2025-11-21 18:45:14,600 - winter_pressures - INFO - 📋 Please manually download the latest data from:
+2025-11-21 18:45:14,600 - winter_pressures - INFO -    https://www.england.nhs.uk/statistics/statistical-work-areas/uec-daily-sitrep/
+2025-11-21 18:45:14,600 - winter_pressures - INFO -    Save Excel/CSV files to: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/raw/nhs/2025-11-21
+2025-11-21 18:45:14,600 - winter_pressures - INFO - 🔍 Attempting to fetch data from NHS Digital API...
+2025-11-21 18:45:15,525 - winter_pressures - WARNING - API returned status code: 403
+2025-11-21 18:45:15,525 - winter_pressures - INFO - 
+📌 MANUAL DOWNLOAD INSTRUCTIONS:
+2025-11-21 18:45:15,525 - winter_pressures - INFO - 1. Visit: https://www.england.nhs.uk/statistics/statistical-work-areas/uec-daily-sitrep/
+2025-11-21 18:45:15,525 - winter_pressures - INFO - 2. Download the latest 'UEC Daily SitRep' Excel file
+2025-11-21 18:45:15,525 - winter_pressures - INFO - 3. Save to: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/raw/nhs/2025-11-21
+2025-11-21 18:45:15,525 - winter_pressures - INFO - 4. Run this script again to process the data
+
+2025-11-21 18:45:15,526 - winter_pressures - INFO - ======================================================================
+2025-11-21 18:45:15,526 - winter_pressures - INFO - DOWNLOADING OPEN-METEO WEATHER DATA
+2025-11-21 18:45:15,526 - winter_pressures - INFO - ======================================================================
+2025-11-21 18:45:15,529 - winter_pressures - INFO - 📍 Fetching weather data for London (51.5074, -0.1278)...
+2025-11-21 18:45:17,709 - winter_pressures - INFO -   ✓ Retrieved 731 days of data for London
+2025-11-21 18:45:18,211 - winter_pressures - INFO - 📍 Fetching weather data for Manchester (53.4808, -2.2426)...
+2025-11-21 18:45:18,695 - winter_pressures - INFO -   ✓ Retrieved 731 days of data for Manchester
+2025-11-21 18:45:19,201 - winter_pressures - INFO - 📍 Fetching weather data for Birmingham (52.4862, -1.8904)...
+2025-11-21 18:45:19,746 - winter_pressures - INFO -   ✓ Retrieved 731 days of data for Birmingham
+2025-11-21 18:45:20,250 - winter_pressures - INFO - 📍 Fetching weather data for Leeds (53.8008, -1.5491)...
+2025-11-21 18:45:20,842 - winter_pressures - INFO -   ✓ Retrieved 731 days of data for Leeds
+2025-11-21 18:45:21,343 - winter_pressures - INFO - 📍 Fetching weather data for Edinburgh (55.9533, -3.1883)...
+2025-11-21 18:45:21,916 - winter_pressures - INFO -   ✓ Retrieved 731 days of data for Edinburgh
+2025-11-21 18:45:22,418 - winter_pressures - INFO - 📍 Fetching weather data for Liverpool (53.4084, -2.9916)...
+2025-11-21 18:45:22,936 - winter_pressures - INFO -   ✓ Retrieved 731 days of data for Liverpool
+2025-11-21 18:45:23,440 - winter_pressures - INFO - 📍 Fetching weather data for Bristol (51.4545, -2.5879)...
+2025-11-21 18:45:23,942 - winter_pressures - INFO -   ✓ Retrieved 731 days of data for Bristol
+2025-11-21 18:45:24,445 - winter_pressures - INFO - 📍 Fetching weather data for Norwich (52.6369, 1.1398)...
+2025-11-21 18:45:26,359 - winter_pressures - INFO -   ✓ Retrieved 731 days of data for Norwich
+2025-11-21 18:45:26,890 - winter_pressures - INFO - 
+✓ Weather data saved to: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/raw/weather/2025-11-21/weather_data_2025-11-21.csv
+2025-11-21 18:45:26,890 - winter_pressures - INFO -   Total records: 5848
+2025-11-21 18:45:26,891 - winter_pressures - INFO -   Date range: 2023-11-22 00:00:00 to 2025-11-21 00:00:00
+2025-11-21 18:45:29,235 - winter_pressures - INFO -   Parquet format saved: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/raw/weather/2025-11-21/weather_data_2025-11-21.parquet
+2025-11-21 18:45:29,236 - winter_pressures - INFO - ======================================================================
+2025-11-21 18:45:29,236 - winter_pressures - INFO - DOWNLOADING GOOGLE TRENDS DATA
+2025-11-21 18:45:29,236 - winter_pressures - INFO - ======================================================================
+2025-11-21 18:45:30,182 - winter_pressures - INFO - 🔍 Fetching trends for: 'flu symptoms'
+2025-11-21 18:45:32,215 - winter_pressures - INFO -   ✓ Retrieved 105 data points for 'flu symptoms'
+2025-11-21 18:45:34,218 - winter_pressures - INFO - 🔍 Fetching trends for: 'fever'
+2025-11-21 18:45:36,320 - winter_pressures - INFO -   ✓ Retrieved 105 data points for 'fever'
+2025-11-21 18:45:38,325 - winter_pressures - INFO - 🔍 Fetching trends for: 'A&E wait times'
+2025-11-21 18:45:40,287 - winter_pressures - INFO -   ✓ Retrieved 105 data points for 'A&E wait times'
+2025-11-21 18:45:42,292 - winter_pressures - INFO - 🔍 Fetching trends for: 'emergency room'
+2025-11-21 18:45:43,887 - winter_pressures - INFO -   ✓ Retrieved 105 data points for 'emergency room'
+2025-11-21 18:45:45,893 - winter_pressures - INFO - 🔍 Fetching trends for: 'cold and flu'
+2025-11-21 18:45:47,926 - winter_pressures - INFO -   ✓ Retrieved 105 data points for 'cold and flu'
+2025-11-21 18:45:49,939 - winter_pressures - INFO - 
+✓ Google Trends data saved to: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/raw/trends/2025-11-21/google_trends_2025-11-21.csv
+2025-11-21 18:45:49,939 - winter_pressures - INFO -   Total records: 525
+2025-11-21 18:45:49,939 - winter_pressures - INFO -   Keywords tracked: 5
+2025-11-21 18:45:49,945 - winter_pressures - INFO -   Parquet format saved: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/raw/trends/2025-11-21/google_trends_2025-11-21.parquet
+2025-11-21 18:45:49,946 - winter_pressures - INFO - ======================================================================
+2025-11-21 18:45:49,946 - winter_pressures - INFO - DATA VALIDATION & SUMMARY
+2025-11-21 18:45:49,946 - winter_pressures - INFO - ======================================================================
+2025-11-21 18:45:49,948 - winter_pressures - INFO - ✓ Summary report saved to: /Users/osmanorka/Winter-Pressure-Predictive-Patient/data/data_summary_2025-11-21.txt
+2025-11-21 18:45:49,949 - winter_pressures - INFO - 
+✅ DATA EXTRACTION COMPLETE!
+2025-11-21 18:45:49,950 - winter_pressures - INFO - Check logs at: /Users/osmanorka/Winter-Pressure-Predictive-Patient/logs

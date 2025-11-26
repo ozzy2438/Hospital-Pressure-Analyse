@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7d799786eede49dad5aeed3eb7630505 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+     <h3 align="center" style="font-size:16px"><b>NHS Regional Pressure Map (30 Mar 2025)</b></h3>
+     
+    
+            <div class="folium-map" id="map_7d799786eede49dad5aeed3eb7630505" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7d799786eede49dad5aeed3eb7630505 = L.map(
+                "map_7d799786eede49dad5aeed3eb7630505",
+                {
+                    center: [54.5, -2.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_36f840945fe49379fb70fb2d359101d3 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_36f840945fe49379fb70fb2d359101d3.addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var marker_bfeff9eb225235357320266b7a81403f = L.marker(
+                [53.4084, -2.9916],
+                {
+}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var icon_f82c2c61b746460b993dcfa4b4df47d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_63bdb3b2a878fc9fda3cbc8cb20f672e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d6400d9e6354e8b206a89371376eed13 = $(`<div id="html_d6400d9e6354e8b206a89371376eed13" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>North West</h4>         <p><b>Status:</b> <span style="color:orange">ELEVATED</span></p>         <hr>         <p><b>Occupancy:</b> 91.2%</p>         <p><b>Beds Occupied:</b> 13,786</p>         <p><b>Beds Open:</b> 15,124</p>         <p><b>Trusts Under Pressure:</b> 18/23</p>     </div>     </div>`)[0];
+                popup_63bdb3b2a878fc9fda3cbc8cb20f672e.setContent(html_d6400d9e6354e8b206a89371376eed13);
+            
+        
+
+        marker_bfeff9eb225235357320266b7a81403f.bindPopup(popup_63bdb3b2a878fc9fda3cbc8cb20f672e)
+        ;
+
+        
+    
+    
+            marker_bfeff9eb225235357320266b7a81403f.bindTooltip(
+                `<div>
+                     North West: 91.2%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bfeff9eb225235357320266b7a81403f.setIcon(icon_f82c2c61b746460b993dcfa4b4df47d5);
+            
+    
+            var circle_3e5d3d56e73f49866d436852094ab25d = L.circle(
+                [53.4084, -2.9916],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27572.0, "stroke": true, "weight": 3}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var marker_e75533ef1b33f0d915136ec66c16c1a2 = L.marker(
+                [51.4545, -2.5879],
+                {
+}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var icon_f53c8f3aee802c2df7dbac0712383030 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_baaaa95384a5fe47a4ad616e5eac115c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fb5e2c1f1674ee24689e5c0f4f11e847 = $(`<div id="html_fb5e2c1f1674ee24689e5c0f4f11e847" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>South West</h4>         <p><b>Status:</b> <span style="color:red">HIGH PRESSURE</span></p>         <hr>         <p><b>Occupancy:</b> 92.4%</p>         <p><b>Beds Occupied:</b> 9,418</p>         <p><b>Beds Open:</b> 10,191</p>         <p><b>Trusts Under Pressure:</b> 13/13</p>     </div>     </div>`)[0];
+                popup_baaaa95384a5fe47a4ad616e5eac115c.setContent(html_fb5e2c1f1674ee24689e5c0f4f11e847);
+            
+        
+
+        marker_e75533ef1b33f0d915136ec66c16c1a2.bindPopup(popup_baaaa95384a5fe47a4ad616e5eac115c)
+        ;
+
+        
+    
+    
+            marker_e75533ef1b33f0d915136ec66c16c1a2.bindTooltip(
+                `<div>
+                     South West: 92.4%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e75533ef1b33f0d915136ec66c16c1a2.setIcon(icon_f53c8f3aee802c2df7dbac0712383030);
+            
+    
+            var circle_9557dd30219b7010f84ede709d3fe641 = L.circle(
+                [51.4545, -2.5879],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18836.0, "stroke": true, "weight": 3}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var marker_6f26ecfb234ff635dad761c3d08a8d2e = L.marker(
+                [53.8008, -1.5491],
+                {
+}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var icon_51d7f8259ba076500d2de3d42609fea6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ae36bd9a222adafc9138dd59f426003 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_72e1338e7250b77a2563000a85e1b05d = $(`<div id="html_72e1338e7250b77a2563000a85e1b05d" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>North East and Yorkshire</h4>         <p><b>Status:</b> <span style="color:orange">ELEVATED</span></p>         <hr>         <p><b>Occupancy:</b> 90.0%</p>         <p><b>Beds Occupied:</b> 15,822</p>         <p><b>Beds Open:</b> 17,580</p>         <p><b>Trusts Under Pressure:</b> 18/22</p>     </div>     </div>`)[0];
+                popup_4ae36bd9a222adafc9138dd59f426003.setContent(html_72e1338e7250b77a2563000a85e1b05d);
+            
+        
+
+        marker_6f26ecfb234ff635dad761c3d08a8d2e.bindPopup(popup_4ae36bd9a222adafc9138dd59f426003)
+        ;
+
+        
+    
+    
+            marker_6f26ecfb234ff635dad761c3d08a8d2e.bindTooltip(
+                `<div>
+                     North East and Yorkshire: 90.0%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6f26ecfb234ff635dad761c3d08a8d2e.setIcon(icon_51d7f8259ba076500d2de3d42609fea6);
+            
+    
+            var circle_a04447eb22c21189096c7517d50f2c5d = L.circle(
+                [53.8008, -1.5491],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 31644.0, "stroke": true, "weight": 3}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var marker_1a761f6387dd5080b6984ec5d8755597 = L.marker(
+                [52.6369, 1.1398],
+                {
+}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var icon_8ec2468951b1ff4ec1b75d7660e17c43 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ad29826eaa33c47209cc9fd9f1c60ce0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0ae38c752d3ab74e7c7986acad4408b4 = $(`<div id="html_0ae38c752d3ab74e7c7986acad4408b4" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>East of England</h4>         <p><b>Status:</b> <span style="color:red">HIGH PRESSURE</span></p>         <hr>         <p><b>Occupancy:</b> 92.3%</p>         <p><b>Beds Occupied:</b> 10,072</p>         <p><b>Beds Open:</b> 10,914</p>         <p><b>Trusts Under Pressure:</b> 14/14</p>     </div>     </div>`)[0];
+                popup_ad29826eaa33c47209cc9fd9f1c60ce0.setContent(html_0ae38c752d3ab74e7c7986acad4408b4);
+            
+        
+
+        marker_1a761f6387dd5080b6984ec5d8755597.bindPopup(popup_ad29826eaa33c47209cc9fd9f1c60ce0)
+        ;
+
+        
+    
+    
+            marker_1a761f6387dd5080b6984ec5d8755597.bindTooltip(
+                `<div>
+                     East of England: 92.3%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1a761f6387dd5080b6984ec5d8755597.setIcon(icon_8ec2468951b1ff4ec1b75d7660e17c43);
+            
+    
+            var circle_e15110be41774c0ac5acae96ccade346 = L.circle(
+                [52.6369, 1.1398],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20144.0, "stroke": true, "weight": 3}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var marker_79213484b4d47aeb79681be58f3951fb = L.marker(
+                [51.5074, -0.1278],
+                {
+}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var icon_3e9d4896c3d1b644bfe029c3ccbbec49 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b73266916d9dc4c1a461889688117be9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eb3fd77cb4657c678843d501ab1390ea = $(`<div id="html_eb3fd77cb4657c678843d501ab1390ea" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>South East</h4>         <p><b>Status:</b> <span style="color:red">HIGH PRESSURE</span></p>         <hr>         <p><b>Occupancy:</b> 92.5%</p>         <p><b>Beds Occupied:</b> 12,768</p>         <p><b>Beds Open:</b> 13,804</p>         <p><b>Trusts Under Pressure:</b> 17/18</p>     </div>     </div>`)[0];
+                popup_b73266916d9dc4c1a461889688117be9.setContent(html_eb3fd77cb4657c678843d501ab1390ea);
+            
+        
+
+        marker_79213484b4d47aeb79681be58f3951fb.bindPopup(popup_b73266916d9dc4c1a461889688117be9)
+        ;
+
+        
+    
+    
+            marker_79213484b4d47aeb79681be58f3951fb.bindTooltip(
+                `<div>
+                     South East: 92.5%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_79213484b4d47aeb79681be58f3951fb.setIcon(icon_3e9d4896c3d1b644bfe029c3ccbbec49);
+            
+    
+            var circle_7247688e67add0c90afadd9dea26a26e = L.circle(
+                [51.5074, -0.1278],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25536.0, "stroke": true, "weight": 3}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var marker_19f97c4be18aedf2a314b321b1f6e273 = L.marker(
+                [52.4862, -1.8904],
+                {
+}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var icon_be8250350bba2a2ea15f4caaed784ef8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_094cdf5aa22fa05268013116ee8d1f18 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_dc515d04c36fd1cd1d13aba635f651b4 = $(`<div id="html_dc515d04c36fd1cd1d13aba635f651b4" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>Midlands</h4>         <p><b>Status:</b> <span style="color:orange">ELEVATED</span></p>         <hr>         <p><b>Occupancy:</b> 91.6%</p>         <p><b>Beds Occupied:</b> 16,960</p>         <p><b>Beds Open:</b> 18,513</p>         <p><b>Trusts Under Pressure:</b> 20/23</p>     </div>     </div>`)[0];
+                popup_094cdf5aa22fa05268013116ee8d1f18.setContent(html_dc515d04c36fd1cd1d13aba635f651b4);
+            
+        
+
+        marker_19f97c4be18aedf2a314b321b1f6e273.bindPopup(popup_094cdf5aa22fa05268013116ee8d1f18)
+        ;
+
+        
+    
+    
+            marker_19f97c4be18aedf2a314b321b1f6e273.bindTooltip(
+                `<div>
+                     Midlands: 91.6%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_19f97c4be18aedf2a314b321b1f6e273.setIcon(icon_be8250350bba2a2ea15f4caaed784ef8);
+            
+    
+            var circle_bdba56c6dfb81c401433fbb4e1fbe76f = L.circle(
+                [52.4862, -1.8904],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 33920.0, "stroke": true, "weight": 3}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var marker_5532a4b5e85b1bd94d23f36665cbaab6 = L.marker(
+                [51.5074, -0.1278],
+                {
+}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+    
+            var icon_af03d1b552a7efd0a5c0158ee931b8f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0fce89e992608742fab6dad694d67db5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4626c139511f9e8ea615571bf9fe7819 = $(`<div id="html_4626c139511f9e8ea615571bf9fe7819" style="width: 100.0%; height: 100.0%;">     <div style="width: 200px;">         <h4>London</h4>         <p><b>Status:</b> <span style="color:orange">ELEVATED</span></p>         <hr>         <p><b>Occupancy:</b> 91.0%</p>         <p><b>Beds Occupied:</b> 13,955</p>         <p><b>Beds Open:</b> 15,332</p>         <p><b>Trusts Under Pressure:</b> 15/22</p>     </div>     </div>`)[0];
+                popup_0fce89e992608742fab6dad694d67db5.setContent(html_4626c139511f9e8ea615571bf9fe7819);
+            
+        
+
+        marker_5532a4b5e85b1bd94d23f36665cbaab6.bindPopup(popup_0fce89e992608742fab6dad694d67db5)
+        ;
+
+        
+    
+    
+            marker_5532a4b5e85b1bd94d23f36665cbaab6.bindTooltip(
+                `<div>
+                     London: 91.0%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5532a4b5e85b1bd94d23f36665cbaab6.setIcon(icon_af03d1b552a7efd0a5c0158ee931b8f1);
+            
+    
+            var circle_564ce9d6648743b0dcee800a0392f81d = L.circle(
+                [51.5074, -0.1278],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27910.0, "stroke": true, "weight": 3}
+            ).addTo(map_7d799786eede49dad5aeed3eb7630505);
+        
+</script>
+</html>
